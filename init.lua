@@ -67,14 +67,6 @@ require('packer').startup(function(use)
   use 'zbirenbaum/copilot.lua'
   use 'zbirenbaum/copilot-cmp'
 
-  -- greeter
-  use {
-    'goolord/alpha-nvim',
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    end
-  }
-
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
