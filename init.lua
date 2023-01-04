@@ -48,10 +48,10 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
-  use 'overcache/NeoSolarized'
+  -- color schemes 
   use 'ishan9299/nvim-solarized-lua'
-  -- fallback theme
-  use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+  use 'navarasu/onedark.nvim'
+
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
@@ -232,7 +232,11 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help' },
+  ensure_installed = {
+    'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help', 'bash', 'dockerfile',
+    'diff', 'gitignore', 'gomod', 'gowork', 'html', 'javascript', 'json', 'make',
+    'markdown', 'php', 'terraform', 'vim', 'yaml',
+  },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -349,7 +353,7 @@ end
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   -- clangd = {},
-  -- gopls = {},
+  gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
@@ -411,7 +415,7 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-Space>'] = cmp.mapping.complete({}),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
