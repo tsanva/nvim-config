@@ -67,6 +67,9 @@ require('packer').startup(function(use)
   use 'zbirenbaum/copilot.lua'
   use 'zbirenbaum/copilot-cmp'
 
+  -- vim-go
+  use 'fatih/vim-go'
+
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
