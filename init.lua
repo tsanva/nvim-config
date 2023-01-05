@@ -139,6 +139,9 @@ vim.o.completeopt = 'menuone,noselect'
 -- 4 spaces tabstop
 vim.o.tabstop = 4
 
+-- enable GoMetaLinter on save
+vim.g.go_metalinter_autosave = 1
+
 -- [[ Basic Keymaps ]]
 -- Set <space> as the leader key
 -- See `:help mapleader`
