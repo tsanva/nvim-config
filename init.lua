@@ -139,8 +139,7 @@ vim.o.completeopt = 'menuone,noselect'
 -- 4 spaces tabstop
 vim.o.tabstop = 4
 
-<<<<<<< HEAD
--- wsl clipboard (WIP)
+-- wsl clipboard 
 in_wsl = os.getenv('WSL_DISTRO_NAME') ~= nil
 
 if in_wsl then
@@ -157,10 +156,8 @@ if in_wsl then
     cache_enabled = true
   }
 end
-=======
--- enable GoMetaLinter on save
+
 vim.g.go_metalinter_autosave = 1
->>>>>>> 6d50b431d7c60eac380d9127e02bd2c40cbcfa5e
 
 -- [[ Basic Keymaps ]]
 -- Set <space> as the leader key
