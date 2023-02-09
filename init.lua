@@ -157,6 +157,7 @@ if in_wsl then
   }
 end
 
+-- enable GoMetaLinter on save
 vim.g.go_metalinter_autosave = 1
 
 -- [[ Basic Keymaps ]]
